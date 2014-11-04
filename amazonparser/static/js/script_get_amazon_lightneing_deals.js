@@ -1,7 +1,8 @@
-//http://www.amazon.com/gp/goldbox
+// paste  this file in the console of http://www.amazon.com/gp/goldbox to get the updated lightening deals dump, make sure your server is running
+server_name= "localhost:8000"//enter your server name
 lightning_deals_dict_final={}
 counter = 1 //parseInt($('#dealCurrentPage').html())
-outer_limit=parseInt($('#dealTotalPages').html())
+outer_limit = parseInt($('#dealTotalPages').html())
 
 get_item_details = function(lightning_deals_dict, inner_counter){
 		console.log("inner_counter :");
@@ -57,23 +58,22 @@ while (counter <= outer_limit) {
 	console.log("outer counter------------------------------------------------------------->>>>>>>")
 	console.log(counter)    
 	counter = counter+1;
-	// setTimeout(function(){
-	// }, 3000);
-    
 }
 data_to_be_sent = JSON.stringify(lightning_deals_dict_final)
 ajaxOpts = {
-		url:"localhost:8000/lightning_deals_view",
+		url:"http://"+server_name+"lightning_deals_view",
 		crossDomain:true,
 		//xhrFields: {withCredentials:true},
 		type:'POST',
 		data: data_to_be_sent,
 		dataType:'json',
-		success: {
+		success:function(resp) {
 			//do something
+			console.log(resp);
 		},
-		error: {
+		error:function(resp) {
 			//do something
+			console.log(resp);
 		},
 	};
 	jQuery.ajax(ajaxOpts);

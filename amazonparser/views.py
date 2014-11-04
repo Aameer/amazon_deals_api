@@ -47,7 +47,12 @@ def lightning_deals_view(request):
 	if request.method =='POST':
 		print "Request is POST"
 		lightening_deals_obj = simplejson.loads(request.body)
-		#saved at same level as db
+		"""
+		I saved dump it at the same level as db, you change the link to the 
+		location to  where you want to save your lightening_deals_obj dump,
+		you can also change the name of the dump file, for details see check 
+		docs of cpickle
+		"""
 		fp= open('/home/aameer/Documents/Work/Github/amazondealsapi/lingtening_deals.pic','w')
 		pic.dump(lightening_deals_obj,fp)
 		fp.close()
@@ -57,6 +62,7 @@ def lightning_deals_view(request):
 def get_lightning_deals(request):
 	if request.method =='GET':
 		print "Request is GET"
+		#change the link to the location where you have saved your lightening_deals_obj dump
 		fp= open('/home/aameer/Documents/Work/Github/amazondealsapi/lingtening_deals.pic','r')
 		lightening_deals_from_pic = pic.load(fp)
 		return HttpResponse(json.dumps(lightening_deals_from_pic), content_type='application/json')

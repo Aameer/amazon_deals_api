@@ -23,4 +23,5 @@ To test if you have configured everything correctly, run the server `python mana
 **This link will give deals which we get from RSS feed present [here](http://rssfeeds.s3.amazonaws.com/goldbox)**
 #http://localhost:8000/get_lightning_deals/ *
 **This link will give lightening deals which we get by js script and save in pickle format as lingtening\_deals.pic**
-*For CORS we are allowing all the domains you can configure it to allow only specific domains for more details check [django-cors-headers](https://github.com/ottoyiu/django-cors-headers)*
+
+For CORS we are allowing all the domains you can configure it to allow only specific domains for more details check [django-cors-headers](https://github.com/ottoyiu/django-cors-headers)*

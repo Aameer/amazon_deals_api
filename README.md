@@ -37,3 +37,4 @@ Hint for doing more with this API : you can also use ajax calls to get these reu
 Some Extra Optional Configration
 -----------------------
 For CORS we are allowing all the domains you can configure it to allow only specific domains for more details check [django-cors-headers](https://github.com/ottoyiu/django-cors-headers)*
+I am not saving dumps in database but they can be saved if need arises.
